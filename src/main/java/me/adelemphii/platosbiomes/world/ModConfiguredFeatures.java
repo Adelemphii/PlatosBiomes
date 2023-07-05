@@ -17,15 +17,19 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
 
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ARACARA_KEY = registerKey("aracara");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         register(context, EBONY_KEY, Feature.TREE, ebony().build());
+        register(context, ARACARA_KEY, Feature.TREE, aracara().build());
     }
 
     /**
@@ -63,6 +67,20 @@ public class ModConfiguredFeatures {
                 //                             limit    lowerSize   upperSize
                 new TwoLayersFeatureSize(1, 0, 2)))
                 .ignoreVines();
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder aracara() {
+        return (new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.ARACARA_LOG.get()),
+                new MegaJungleTrunkPlacer(15, 10, 2),
+                BlockStateProvider.simple(ModBlocks.ARACARA_LEAVES.get()),
+                new MegaJungleFoliagePlacer(
+                        ConstantInt.of(3),
+                        ConstantInt.of(0),
+                        1
+                ),
+                new TwoLayersFeatureSize(1, 0, 1)
+        ));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

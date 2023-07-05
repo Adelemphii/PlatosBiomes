@@ -16,6 +16,7 @@ public class AdeModBiomes {
     private static final List<ResourceKey<Biome>> allBiomes = Lists.newArrayList();
 
     public static final ResourceKey<Biome> VOLCANO = registerOverworld("volcano");
+    public static final ResourceKey<Biome> BIG_ASS_JUNGLE = registerOverworld("big_ass_jungle");
 
     public static List<ResourceKey<Biome>> getOverworldBiomes() {
         return ImmutableList.copyOf(overworldBiomes);

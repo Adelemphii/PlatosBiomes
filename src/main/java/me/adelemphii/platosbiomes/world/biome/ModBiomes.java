@@ -17,7 +17,7 @@ import terrablender.api.SurfaceRuleManager;
 public class ModBiomes {
 
     public static void setupTerraBlender() {
-        Regions.register(new ModOverworldRegionPrimary(2));
+        Regions.register(new ModOverworldRegionPrimary(4));
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, PlatosBiomes.MODID, ModSurfaceRuleData.overworld());
     }
@@ -27,6 +27,7 @@ public class ModBiomes {
         HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
 
         register(context, AdeModBiomes.VOLCANO, AdeOverworldBiomes.volcano(placedFeatureGetter, carverGetter));
+        register(context, AdeModBiomes.BIG_ASS_JUNGLE, AdeOverworldBiomes.bigAssJungle(placedFeatureGetter, carverGetter));
     }
 
     private static void register(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {

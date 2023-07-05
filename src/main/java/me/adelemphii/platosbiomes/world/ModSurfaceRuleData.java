@@ -347,12 +347,23 @@ public class ModSurfaceRuleData {
                 SMOOTH_BASALT
         );
 
+        SurfaceRules.RuleSource bigAssJungleSurface = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK),
+                DIRT
+        );
+
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(AdeModBiomes.VOLCANO),
                         SurfaceRules.sequence(
                                 SurfaceRules.ifTrue(surfaceNoiseAbove(2.8D), MAGMA),
                                 volcanoSurface
+                        )
+                ),
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(AdeModBiomes.BIG_ASS_JUNGLE),
+                        SurfaceRules.sequence(
+                                bigAssJungleSurface
                         )
                 )
         );

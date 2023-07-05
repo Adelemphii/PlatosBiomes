@@ -85,6 +85,14 @@ public class ModOverworldBiomeBuilder {
             {Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT}
     };
 
+    protected final ResourceKey<Biome>[][] MIDDLE_BIOMES_PLATOS = new ResourceKey[][]{
+            {null, null, null, null, null},
+            {null, null, null, null, null},
+            {null, null, null, null, null},
+            {null, null, null, AdeModBiomes.BIG_ASS_JUNGLE, AdeModBiomes.BIG_ASS_JUNGLE},
+            {null, null, null, null, null}
+    };
+
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
             {Biomes.ICE_SPIKES, null, Biomes.SNOWY_TAIGA, null, null},
             {null, null, null, null, Biomes.OLD_GROWTH_PINE_TAIGA},
@@ -383,7 +391,7 @@ public class ModOverworldBiomeBuilder {
     }
 
     protected ResourceKey<Biome> pickMiddleBiomeBOP(Registry<Biome> biomeRegistry, int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
-        ResourceKey<Biome> middleBiome = BiomeUtil.biomeOrFallback(biomeRegistry, this.MIDDLE_BIOMES[temperatureIndex][humidityIndex]);
+        ResourceKey<Biome> middleBiome = BiomeUtil.biomeOrFallback(biomeRegistry, this.MIDDLE_BIOMES_PLATOS[temperatureIndex][humidityIndex], this.MIDDLE_BIOMES[temperatureIndex][humidityIndex]);
 
         if(weirdness.max() < 0) return middleBiome;
         else {

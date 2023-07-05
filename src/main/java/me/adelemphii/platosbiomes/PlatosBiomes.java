@@ -55,6 +55,10 @@ public class PlatosBiomes {
             event.accept(ModBlocks.STRIPPED_EBONY_LOG);
             event.accept(ModBlocks.STRIPPED_EBONY_WOOD);
             event.accept(ModBlocks.EBONY_SAPLING);
+
+            event.accept(ModBlocks.ARACARA_LOG);
+            event.accept(ModBlocks.ARACARA_WOOD);
+            event.accept(ModBlocks.ARACARA_LEAVES);
         }
         if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.EBONY_LOG);
@@ -64,6 +68,10 @@ public class PlatosBiomes {
             event.accept(ModBlocks.STRIPPED_EBONY_LOG);
             event.accept(ModBlocks.STRIPPED_EBONY_WOOD);
             event.accept(ModBlocks.EBONY_SAPLING);
+
+            event.accept(ModBlocks.ARACARA_LOG);
+            event.accept(ModBlocks.ARACARA_WOOD);
+            event.accept(ModBlocks.ARACARA_LEAVES);
         }
     }
 

@@ -19,6 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // EBONY
         logBlock(((RotatedPillarBlock) ModBlocks.EBONY_LOG.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.EBONY_WOOD.get(),
                 blockTexture(ModBlocks.EBONY_LOG.get()), blockTexture(ModBlocks.EBONY_LOG.get()));
@@ -37,6 +38,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(ModBlocks.EBONY_WOOD.get(), models().withExistingParent("platosbiomes:ebony_wood", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_EBONY_LOG.get(), models().withExistingParent("platosbiomes:stripped_ebony_log", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_EBONY_WOOD.get(), models().withExistingParent("platosbiomes:stripped_ebony_wood", "minecraft:block/cube_column"));
+
+        // ARACARA
+        logBlock((RotatedPillarBlock) ModBlocks.ARACARA_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.ARACARA_WOOD.get(),
+                blockTexture(ModBlocks.ARACARA_LOG.get()), blockTexture(ModBlocks.ARACARA_LOG.get()));
+
+        blockWithItem(ModBlocks.ARACARA_LEAVES);
+        simpleBlockItem(ModBlocks.ARACARA_LOG.get(), models().withExistingParent("platosbiomes:aracara_log", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.ARACARA_WOOD.get(), models().withExistingParent("platosbiomes:aracara_wood", "minecraft:block/cube_column"));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

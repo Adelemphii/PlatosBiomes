@@ -1,6 +1,7 @@
 package me.adelemphii.platosbiomes.world.biome;
 
 import me.adelemphii.platosbiomes.world.ModMiscOverworldPlacedFeatures;
+import me.adelemphii.platosbiomes.world.ModTreePlacedFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -97,8 +98,7 @@ public class AdeOverworldBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
-    public static Biome volcano(HolderGetter<PlacedFeature> placedFeatureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter)
-    {
+    public static Biome volcano(HolderGetter<PlacedFeature> placedFeatureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         // Mob spawns
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
@@ -114,5 +114,31 @@ public class AdeOverworldBiomes {
         BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
 
         return biomeWithColorOverridesAndParticles(false, 0.95F, 0.3F, 4566514, 267827, 0x7F7F7F, 0x4A703B, 0x547D42, calculateSkyColor(0.95F), spawnBuilder, biomeBuilder, ParticleTypes.WHITE_ASH, 0.059046667F, MOUNTAIN_MUSIC);
+    }
+
+    public static Biome bigAssJungle(HolderGetter<PlacedFeature> placedFeatureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);
+
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSprings(biomeBuilder);
+
+        addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModTreePlacedFeatures.ARACARA_PLACED_KEY);
+        //BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        //BiomeDefaultFeatures.addJungleTrees(biomeBuilder);
+        //BiomeDefaultFeatures.addWarmFlowers(biomeBuilder);
+        //BiomeDefaultFeatures.addJungleGrass(biomeBuilder);
+        //BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        //BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+        //BiomeDefaultFeatures.addJungleVines(biomeBuilder);
+        //BiomeDefaultFeatures.addJungleMelons(biomeBuilder);
+
+        return biomeWithColorOverrides(true, 1f, 0.5f,
+                0x228062, 0x195D84, 0x005E59,
+                0x228062, 0x228062,
+                calculateSkyColor(0.95f),
+                spawnBuilder, biomeBuilder, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
     }
 }
