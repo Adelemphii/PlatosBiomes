@@ -44,7 +44,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) ModBlocks.ARACARA_WOOD.get(),
                 blockTexture(ModBlocks.ARACARA_LOG.get()), blockTexture(ModBlocks.ARACARA_LOG.get()));
 
+        blockWithItem(ModBlocks.ARACARA_PLANKS);
         blockWithItem(ModBlocks.ARACARA_LEAVES);
+
         simpleBlockItem(ModBlocks.ARACARA_LOG.get(), models().withExistingParent("platosbiomes:aracara_log", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.ARACARA_WOOD.get(), models().withExistingParent("platosbiomes:aracara_wood", "minecraft:block/cube_column"));
     }

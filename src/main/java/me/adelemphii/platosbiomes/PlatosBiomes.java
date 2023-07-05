@@ -58,6 +58,7 @@ public class PlatosBiomes {
 
             event.accept(ModBlocks.ARACARA_LOG);
             event.accept(ModBlocks.ARACARA_WOOD);
+            event.accept(ModBlocks.ARACARA_PLANKS);
             event.accept(ModBlocks.ARACARA_LEAVES);
         }
         if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
@@ -71,6 +72,7 @@ public class PlatosBiomes {
 
             event.accept(ModBlocks.ARACARA_LOG);
             event.accept(ModBlocks.ARACARA_WOOD);
+            event.accept(ModBlocks.ARACARA_PLANKS);
             event.accept(ModBlocks.ARACARA_LEAVES);
         }
     }
