@@ -28,8 +28,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.ARACARA_LOG.get());
         this.dropSelf(ModBlocks.ARACARA_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_ARACARA_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_ARACARA_WOOD.get());
         this.dropSelf(ModBlocks.ARACARA_PLANKS.get());
-        // need saplings eventually
         this.dropSelf(ModBlocks.ARACARA_LEAVES.get());
     }
 

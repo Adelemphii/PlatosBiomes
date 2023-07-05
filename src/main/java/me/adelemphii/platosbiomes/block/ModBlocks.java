@@ -86,6 +86,13 @@ public class ModBlocks {
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
                     .strength(5f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> STRIPPED_ARACARA_LOG = registerBlock("stripped_aracara_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
+                    .strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> STRIPPED_ARACARA_WOOD = registerBlock("stripped_aracara_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
+                    .strength(5f).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> ARACARA_PLANKS = registerBlock("aracara_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
                     .strength(5f)){

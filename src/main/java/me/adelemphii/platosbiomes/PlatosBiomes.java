@@ -47,6 +47,8 @@ public class PlatosBiomes {
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
+
+
         if(event.getTab() == ModCreativeModeTabs.PLATOS_BIOMES_TAB) {
             event.accept(ModBlocks.EBONY_LOG);
             event.accept(ModBlocks.EBONY_WOOD);

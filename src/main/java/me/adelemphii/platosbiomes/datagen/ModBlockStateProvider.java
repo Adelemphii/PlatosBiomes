@@ -43,12 +43,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logBlock((RotatedPillarBlock) ModBlocks.ARACARA_LOG.get());
         axisBlock((RotatedPillarBlock) ModBlocks.ARACARA_WOOD.get(),
                 blockTexture(ModBlocks.ARACARA_LOG.get()), blockTexture(ModBlocks.ARACARA_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ARACARA_LOG.get(),
+                new ResourceLocation(PlatosBiomes.MODID, "block/stripped_aracara_log"),
+                new ResourceLocation(PlatosBiomes.MODID, "block/stripped_aracara_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ARACARA_WOOD.get(),
+                new ResourceLocation(PlatosBiomes.MODID, "block/stripped_aracara_log"),
+                new ResourceLocation(PlatosBiomes.MODID, "block/stripped_aracara_log"));
 
         blockWithItem(ModBlocks.ARACARA_PLANKS);
         blockWithItem(ModBlocks.ARACARA_LEAVES);
 
         simpleBlockItem(ModBlocks.ARACARA_LOG.get(), models().withExistingParent("platosbiomes:aracara_log", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.ARACARA_WOOD.get(), models().withExistingParent("platosbiomes:aracara_wood", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.STRIPPED_ARACARA_LOG.get(), models().withExistingParent("platosbiomes:stripped_aracara_log", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.STRIPPED_ARACARA_WOOD.get(), models().withExistingParent("platosbiomes:stripped_aracara_wood", "minecraft:block/cube_column"));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
