@@ -39,14 +39,4 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_log", has(itemTag))
                 .save(consumer);
     }
-
-    protected static void woodFromLogs(Consumer<FinishedRecipe> consumer, ItemLike result, TagKey<Item> itemTag) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result, 3)
-                .define('#', itemTag)
-                .pattern("##")
-                .pattern("##")
-                .group("bark")
-                .unlockedBy("has_log", has(itemTag))
-                .save(consumer);
-    }
 }
