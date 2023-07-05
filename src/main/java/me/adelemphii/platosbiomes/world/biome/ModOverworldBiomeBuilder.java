@@ -89,7 +89,7 @@ public class ModOverworldBiomeBuilder {
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {null, null, null, AdeModBiomes.BIG_ASS_JUNGLE, AdeModBiomes.BIG_ASS_JUNGLE},
+            {null, null, null, PlatosModBiomes.BIG_ASS_JUNGLE, PlatosModBiomes.BIG_ASS_JUNGLE},
             {null, null, null, null, null}
     };
 
@@ -457,7 +457,7 @@ public class ModOverworldBiomeBuilder {
         ResourceKey<Biome> peakBiome = this.pickPeakBiome(temperatureIndex, humidityIndex, weirdness);
 
         if(temperatureIndex == 3 && humidityIndex >= 3) {
-            return BiomeUtil.biomeOrFallback(biomeRegistry, AdeModBiomes.VOLCANO, peakBiome);
+            return BiomeUtil.biomeOrFallback(biomeRegistry, PlatosModBiomes.VOLCANO, peakBiome);
         }
         else return peakBiome;
     }
@@ -466,7 +466,7 @@ public class ModOverworldBiomeBuilder {
         ResourceKey<Biome> plateauBiome = this.pickPlateauBiomeBOP(biomeRegistry, temperatureIndex, humidityIndex, weirdness);
 
         if(temperatureIndex == 3 && humidityIndex >= 3) {
-            return BiomeUtil.biomeOrFallback(biomeRegistry, AdeModBiomes.VOLCANO, plateauBiome);
+            return BiomeUtil.biomeOrFallback(biomeRegistry, PlatosModBiomes.VOLCANO, plateauBiome);
         }
         else return plateauBiome;
     }

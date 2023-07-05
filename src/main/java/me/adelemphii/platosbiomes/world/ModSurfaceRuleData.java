@@ -1,7 +1,7 @@
 package me.adelemphii.platosbiomes.world;
 
 import com.google.common.collect.ImmutableList;
-import me.adelemphii.platosbiomes.world.biome.AdeModBiomes;
+import me.adelemphii.platosbiomes.world.biome.PlatosModBiomes;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -354,14 +354,14 @@ public class ModSurfaceRuleData {
 
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(AdeModBiomes.VOLCANO),
+                        SurfaceRules.isBiome(PlatosModBiomes.VOLCANO),
                         SurfaceRules.sequence(
                                 SurfaceRules.ifTrue(surfaceNoiseAbove(2.8D), MAGMA),
                                 volcanoSurface
                         )
                 ),
                 SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(AdeModBiomes.BIG_ASS_JUNGLE),
+                        SurfaceRules.isBiome(PlatosModBiomes.BIG_ASS_JUNGLE),
                         SurfaceRules.sequence(
                                 bigAssJungleSurface
                         )

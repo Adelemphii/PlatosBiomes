@@ -26,8 +26,8 @@ public class ModBiomes {
         HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
         HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
 
-        register(context, AdeModBiomes.VOLCANO, AdeOverworldBiomes.volcano(placedFeatureGetter, carverGetter));
-        register(context, AdeModBiomes.BIG_ASS_JUNGLE, AdeOverworldBiomes.bigAssJungle(placedFeatureGetter, carverGetter));
+        register(context, PlatosModBiomes.VOLCANO, PlatosOverworldBiomes.volcano(placedFeatureGetter, carverGetter));
+        register(context, PlatosModBiomes.BIG_ASS_JUNGLE, PlatosOverworldBiomes.bigAssJungle(placedFeatureGetter, carverGetter));
     }
 
     private static void register(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {

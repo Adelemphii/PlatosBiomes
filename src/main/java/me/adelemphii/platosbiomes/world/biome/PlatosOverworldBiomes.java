@@ -20,7 +20,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import org.jetbrains.annotations.Nullable;
 
 // https://github.com/Glitchfiend/BiomesOPlenty/blob/BOP-1.19.4-17.3.x/src/main/java/biomesoplenty/common/biome/BOPOverworldBiomes.java#L1285
-public class AdeOverworldBiomes {
+public class PlatosOverworldBiomes {
     @Nullable
     private static final Music NORMAL_MUSIC = null;
     private static final Music LUSH_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST);

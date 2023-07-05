@@ -10,7 +10,7 @@ import net.minecraft.world.level.biome.Biome;
 
 import java.util.List;
 
-public class AdeModBiomes {
+public class PlatosModBiomes {
 
     private static final List<ResourceKey<Biome>> overworldBiomes = Lists.newArrayList();
     private static final List<ResourceKey<Biome>> allBiomes = Lists.newArrayList();
