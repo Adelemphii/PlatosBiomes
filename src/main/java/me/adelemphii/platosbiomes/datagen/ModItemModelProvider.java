@@ -2,11 +2,11 @@ package me.adelemphii.platosbiomes.datagen;
 
 import me.adelemphii.platosbiomes.PlatosBiomes;
 import me.adelemphii.platosbiomes.block.ModBlocks;
+import me.adelemphii.platosbiomes.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -21,7 +21,16 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         saplingItem(ModBlocks.EBONY_SAPLING);
-        trapdoorItem(ModBlocks.ARACARA_TRAPDOOR, "aracara_trapdoor");
+        trapdoorItem("aracara_trapdoor");
+        simpleItem(ModItems.ARACARA_SIGN);
+        this.fenceInventory("aracara_fence", modLoc("block/aracara_planks"));
+        this.fenceInventory("aracara_fence_gate", modLoc("block/aracara_planks"));
+        this.buttonInventory("aracara_button", modLoc("block/aracara_planks"));
+        this.slab("aracara_slab", modLoc("block/aracara_planks"),
+                modLoc("block/aracara_planks"), modLoc("block/aracara_planks"));
+        this.pressurePlate("aracara_pressure_plate", modLoc("block/aracara_planks"));
+        this.stairs("aracara_stairs", modLoc("block/aracara_planks"),
+                modLoc("block/aracara_planks"), modLoc("block/aracara_planks"));
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
@@ -30,7 +39,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", new ResourceLocation(PlatosBiomes.MODID, "block/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder trapdoorItem(RegistryObject<TrapDoorBlock> item, String name) {
+    private ItemModelBuilder trapdoorItem(String name) {
         return this.withExistingParent(name, modLoc("block/" + name + "_bottom"));
     }
 

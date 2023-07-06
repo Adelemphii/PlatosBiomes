@@ -2,10 +2,16 @@ package me.adelemphii.platosbiomes;
 
 import com.mojang.logging.LogUtils;
 import me.adelemphii.platosbiomes.block.ModBlocks;
+import me.adelemphii.platosbiomes.block.entity.ModBlockEntities;
+import me.adelemphii.platosbiomes.block.entity.ModWoodType;
 import me.adelemphii.platosbiomes.item.ModCreativeModeTabs;
 import me.adelemphii.platosbiomes.item.ModItems;
 import me.adelemphii.platosbiomes.world.biome.ModBiomes;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -31,6 +37,7 @@ public class PlatosBiomes {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -43,12 +50,13 @@ public class PlatosBiomes {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(ModBiomes::setupTerraBlender);
+        event.enqueueWork(() -> {
+            event.enqueueWork(ModBiomes::setupTerraBlender);
+            Sheets.addWoodType(ModWoodType.ARACARA);
+        });
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-
-
         if(event.getTab() == ModCreativeModeTabs.PLATOS_BIOMES_TAB) {
             event.accept(ModBlocks.EBONY_LOG);
             event.accept(ModBlocks.EBONY_WOOD);
@@ -66,6 +74,13 @@ public class PlatosBiomes {
             event.accept(ModBlocks.ARACARA_LEAVES);
             event.accept(ModBlocks.ARACARA_DOOR);
             event.accept(ModBlocks.ARACARA_TRAPDOOR);
+            event.accept(ModBlocks.ARACARA_BUTTON);
+            event.accept(ModBlocks.ARACARA_FENCE);
+            event.accept(ModBlocks.ARACARA_FENCE_GATE);
+            event.accept(ModBlocks.ARACARA_PRESSURE_PLATE);
+            event.accept(ModBlocks.ARACARA_SLAB);
+
+            event.accept(ModItems.ARACARA_SIGN);
         }
         if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.EBONY_LOG);
@@ -93,7 +108,8 @@ public class PlatosBiomes {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            WoodType.register(ModWoodType.ARACARA);
+            BlockEntityRenderers.register(ModBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
         }
     }
 }

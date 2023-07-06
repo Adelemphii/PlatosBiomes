@@ -1,7 +1,10 @@
 package me.adelemphii.platosbiomes.block;
 
 import me.adelemphii.platosbiomes.PlatosBiomes;
+import me.adelemphii.platosbiomes.block.entity.ModWoodType;
 import me.adelemphii.platosbiomes.block.objects.ModFlammableRotatedPillarBlock;
+import me.adelemphii.platosbiomes.block.objects.PlatosStandingSignBlock;
+import me.adelemphii.platosbiomes.block.objects.PlatosWallSignBlock;
 import me.adelemphii.platosbiomes.item.ModItems;
 import me.adelemphii.platosbiomes.world.tree.EbonyTreeGrower;
 import net.minecraft.core.BlockPos;
@@ -13,6 +16,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -123,6 +127,34 @@ public class ModBlocks {
                 }
             });
 
+    public static final RegistryObject<SlabBlock> ARACARA_SLAB = registerBlock("aracara_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
+
+    public static final RegistryObject<ButtonBlock> ARACARA_BUTTON = registerBlock("aracara_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK,
+                    30, true));
+
+
+    public static final RegistryObject<StairBlock> ARACARA_STAIRS = registerBlock("aracara_stairs",
+            () -> new StairBlock(() -> ModBlocks.ARACARA_LOG.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+
+    public static final RegistryObject<PressurePlateBlock> ARACARA_PRESSURE_PLATE = registerBlock("aracara_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+
+    public static final RegistryObject<FenceBlock> ARACARA_FENCE = registerBlock("aracara_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+
+    public static final RegistryObject<FenceGateBlock> ARACARA_FENCE_GATE = registerBlock("aracara_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), ModWoodType.ARACARA));
+
+    public static final RegistryObject<PlatosStandingSignBlock> ARACARA_SIGN = registerBlockWithoutBlockItem("aracara_sign",
+            () -> new PlatosStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodType.ARACARA));
+
+    public static final RegistryObject<PlatosWallSignBlock> ARACARA_WALL_SIGN = registerBlockWithoutBlockItem("aracara_sign_wall",
+            () -> new PlatosWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodType.ARACARA));
+
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);
     }
@@ -135,5 +167,9 @@ public class ModBlocks {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 }

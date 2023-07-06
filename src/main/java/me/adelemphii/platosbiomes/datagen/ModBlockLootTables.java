@@ -1,6 +1,7 @@
 package me.adelemphii.platosbiomes.datagen;
 
 import me.adelemphii.platosbiomes.block.ModBlocks;
+import me.adelemphii.platosbiomes.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
@@ -34,6 +35,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.ARACARA_LEAVES.get());
         this.add(ModBlocks.ARACARA_DOOR.get(), this::createDoorTable);
         this.dropSelf(ModBlocks.ARACARA_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.ARACARA_BUTTON.get());
+        this.dropSelf(ModBlocks.ARACARA_FENCE.get());
+        this.dropSelf(ModBlocks.ARACARA_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.ARACARA_SIGN.get());
+        this.dropOther(ModBlocks.ARACARA_WALL_SIGN.get(), ModItems.ARACARA_SIGN.get());
+        this.dropSelf(ModBlocks.ARACARA_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.ARACARA_SLAB.get());
+        this.dropSelf(ModBlocks.ARACARA_STAIRS.get());
     }
 
     @Override

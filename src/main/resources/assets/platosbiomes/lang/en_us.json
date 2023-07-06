@@ -16,5 +16,11 @@
   "block.platosbiomes.aracara_planks": "Aracara Planks",
   "block.platosbiomes.aracara_leaves": "Aracara Leaves",
   "block.platosbiomes.aracara_door": "Aracara Door",
-  "block.platosbiomes.aracara_trapdoor": "Aracara Trapdoor"
+  "block.platosbiomes.aracara_trapdoor": "Aracara Trapdoor",
+  "block.platosbiomes.aracara_sign": "Aracara Sign",
+  "block.platosbiomes.aracara_slab": "Aracara Slab",
+  "block.platosbiomes.aracara_button": "Aracara Button",
+  "block.platosbiomes.aracara_fence": "Aracara Fence",
+  "block.platosbiomes.aracara_fence_gate":"Aracara Fence Gate",
+  "block.platosbiomes.aracara_pressure_plate": "Aracara Pressure Plate"
 }

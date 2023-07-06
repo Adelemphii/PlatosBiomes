@@ -5,6 +5,7 @@ import me.adelemphii.platosbiomes.block.ModBlocks;
 import me.adelemphii.platosbiomes.utility.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -26,5 +27,24 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(ModTags.Blocks.ARACARA_WOOD)
                 .add(ModBlocks.ARACARA_WOOD.get())
                 .add(ModBlocks.STRIPPED_ARACARA_WOOD.get());
+
+        addToMinecraftTags();
+    }
+
+    private void addToMinecraftTags() {
+        this.tag(BlockTags.FENCES)
+                .add(ModBlocks.ARACARA_FENCE.get());
+        this.tag(BlockTags.LOGS)
+                .add(ModBlocks.ARACARA_LOG.get())
+                .add(ModBlocks.STRIPPED_ARACARA_LOG.get())
+                .add(ModBlocks.ARACARA_WOOD.get())
+                .add(ModBlocks.STRIPPED_ARACARA_WOOD.get());
+        this.tag(BlockTags.SIGNS)
+                .add(ModBlocks.ARACARA_SIGN.get())
+                .add(ModBlocks.ARACARA_WALL_SIGN.get());
+        this.tag(BlockTags.WALL_SIGNS)
+                .add(ModBlocks.ARACARA_WALL_SIGN.get());
+        this.tag(BlockTags.STANDING_SIGNS)
+                .add(ModBlocks.ARACARA_SIGN.get());
     }
 }

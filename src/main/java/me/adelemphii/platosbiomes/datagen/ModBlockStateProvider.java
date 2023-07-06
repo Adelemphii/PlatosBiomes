@@ -53,6 +53,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.ARACARA_PLANKS);
         blockWithItem(ModBlocks.ARACARA_LEAVES);
 
+        slabBlock(ModBlocks.ARACARA_SLAB.get(), modLoc("block/aracara_planks"), modLoc("block/aracara_planks"));
+        buttonBlock(ModBlocks.ARACARA_BUTTON.get(), modLoc("block/aracara_planks"));
+        pressurePlateBlock(ModBlocks.ARACARA_PRESSURE_PLATE.get(), modLoc("block/aracara_planks"));
+
+        stairsBlock(ModBlocks.ARACARA_STAIRS.get(), modLoc("block/aracara_planks"));
+
+        fenceBlock(ModBlocks.ARACARA_FENCE.get(), modLoc("block/aracara_planks"));
+        fenceGateBlock(ModBlocks.ARACARA_FENCE_GATE.get(), modLoc("block/aracara_planks"));
+
+        signBlock(ModBlocks.ARACARA_SIGN.get(), ModBlocks.ARACARA_WALL_SIGN.get(),
+                new ResourceLocation(PlatosBiomes.MODID, "block/aracara_planks"));
+
         simpleBlockItem(ModBlocks.ARACARA_LOG.get(), models().withExistingParent("platosbiomes:aracara_log", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.ARACARA_WOOD.get(), models().withExistingParent("platosbiomes:aracara_wood", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_ARACARA_LOG.get(), models().withExistingParent("platosbiomes:stripped_aracara_log", "minecraft:block/cube_column"));
