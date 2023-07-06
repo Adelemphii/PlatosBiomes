@@ -20,6 +20,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         saplingItem(ModBlocks.EBONY_SAPLING);
+        this.withExistingParent("aracara_trapdoor", "handheld")
+                .texture("layer0", new ResourceLocation(PlatosBiomes.MODID, "item/aracara_trapdoor"));
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

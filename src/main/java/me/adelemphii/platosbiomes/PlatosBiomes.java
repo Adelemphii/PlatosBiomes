@@ -60,21 +60,25 @@ public class PlatosBiomes {
 
             event.accept(ModBlocks.ARACARA_LOG);
             event.accept(ModBlocks.ARACARA_WOOD);
+            event.accept(ModBlocks.STRIPPED_ARACARA_LOG);
+            event.accept(ModBlocks.STRIPPED_ARACARA_WOOD);
             event.accept(ModBlocks.ARACARA_PLANKS);
             event.accept(ModBlocks.ARACARA_LEAVES);
+            event.accept(ModBlocks.ARACARA_DOOR);
+            event.accept(ModBlocks.ARACARA_TRAPDOOR);
         }
         if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.EBONY_LOG);
             event.accept(ModBlocks.EBONY_WOOD);
             event.accept(ModBlocks.EBONY_LEAVES);
-            event.accept(ModBlocks.EBONY_PLANKS);
             event.accept(ModBlocks.STRIPPED_EBONY_LOG);
             event.accept(ModBlocks.STRIPPED_EBONY_WOOD);
             event.accept(ModBlocks.EBONY_SAPLING);
 
             event.accept(ModBlocks.ARACARA_LOG);
             event.accept(ModBlocks.ARACARA_WOOD);
-            event.accept(ModBlocks.ARACARA_PLANKS);
+            event.accept(ModBlocks.STRIPPED_ARACARA_LOG);
+            event.accept(ModBlocks.STRIPPED_ARACARA_WOOD);
             event.accept(ModBlocks.ARACARA_LEAVES);
         }
     }
@@ -89,6 +93,7 @@ public class PlatosBiomes {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
         }
     }
 }

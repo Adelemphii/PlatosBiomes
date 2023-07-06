@@ -57,6 +57,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(ModBlocks.ARACARA_WOOD.get(), models().withExistingParent("platosbiomes:aracara_wood", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_ARACARA_LOG.get(), models().withExistingParent("platosbiomes:stripped_aracara_log", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_ARACARA_WOOD.get(), models().withExistingParent("platosbiomes:stripped_aracara_wood", "minecraft:block/cube_column"));
+
+        this.itemModels().basicItem(ModBlocks.ARACARA_DOOR.get().asItem());
+        doorBlockWithRenderType(ModBlocks.ARACARA_DOOR.get(),
+                modLoc("block/aracara_door_bottom"), modLoc("block/aracara_door_top"), "cutout");
+
+        trapdoorBlock(ModBlocks.ARACARA_TRAPDOOR.get(),  new ResourceLocation(PlatosBiomes.MODID, "block/aracara_trapdoor"), true);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

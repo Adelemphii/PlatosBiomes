@@ -32,6 +32,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STRIPPED_ARACARA_WOOD.get());
         this.dropSelf(ModBlocks.ARACARA_PLANKS.get());
         this.dropSelf(ModBlocks.ARACARA_LEAVES.get());
+        this.add(ModBlocks.ARACARA_DOOR.get(), this::createDoorTable);
+        this.dropSelf(ModBlocks.ARACARA_TRAPDOOR.get());
     }
 
     @Override
