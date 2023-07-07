@@ -70,6 +70,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ARACARA_BUTTON.get());
         this.tag(BlockTags.LEAVES)
                 .add(ModBlocks.ARACARA_LEAVES.get());
+        this.tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.ARACARA_SAPLING.get());
         this.tag(BlockTags.DOORS)
                 .add(ModBlocks.ARACARA_DOOR.get());
         this.tag(BlockTags.WOODEN_DOORS)
