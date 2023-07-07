@@ -32,6 +32,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         addToMinecraftTags();
     }
 
+    // TODO: Instead of adding individual items to the tags directly,
+    //  should add them to a ModTag then add the modtag to the minecraft tag
     private void addToMinecraftTags() {
         this.tag(BlockTags.LOGS)
                 .add(ModBlocks.ARACARA_LOG.get())

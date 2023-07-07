@@ -10,6 +10,7 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
@@ -19,7 +20,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         planksFromLogs(ModBlocks.ARACARA_PLANKS.get(), ModTags.Items.ARACARA_LOGS, consumer);
 
         woodFromLogs(consumer, ModBlocks.ARACARA_WOOD.get(), ModBlocks.ARACARA_LOG.get());
