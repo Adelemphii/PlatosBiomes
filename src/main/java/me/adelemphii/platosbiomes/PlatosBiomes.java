@@ -79,7 +79,7 @@ public class PlatosBiomes {
             event.accept(ModBlocks.ARACARA_FENCE_GATE);
             event.accept(ModBlocks.ARACARA_PRESSURE_PLATE);
             event.accept(ModBlocks.ARACARA_SLAB);
-
+            event.accept(ModBlocks.ARACARA_STAIRS);
             event.accept(ModItems.ARACARA_SIGN);
         }
         if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {

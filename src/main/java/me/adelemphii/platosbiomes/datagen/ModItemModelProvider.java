@@ -20,9 +20,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        saplingItem(ModBlocks.EBONY_SAPLING);
-        trapdoorItem("aracara_trapdoor");
-        simpleItem(ModItems.ARACARA_SIGN);
+        this.saplingItem(ModBlocks.EBONY_SAPLING);
+        this.trapdoorItem("aracara_trapdoor");
+        this.simpleItem(ModItems.ARACARA_SIGN);
         this.fenceInventory("aracara_fence", modLoc("block/aracara_planks"));
         this.fenceInventory("aracara_fence_gate", modLoc("block/aracara_planks"));
         this.buttonInventory("aracara_button", modLoc("block/aracara_planks"));
