@@ -50,6 +50,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ResourceLocation(PlatosBiomes.MODID, "block/stripped_aracara_log"),
                 new ResourceLocation(PlatosBiomes.MODID, "block/stripped_aracara_log"));
 
+        saplingBlock(ModBlocks.ARACARA_SAPLING);
         blockWithItem(ModBlocks.ARACARA_PLANKS);
         blockWithItem(ModBlocks.ARACARA_LEAVES);
 

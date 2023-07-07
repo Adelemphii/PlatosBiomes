@@ -27,7 +27,7 @@ public class ModTreePlacedFeatures {
         register(context, EBONY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EBONY_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.EBONY_SAPLING.get()));
         register(context, ARACARA_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ARACARA_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.EBONY_SAPLING.get()));
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.ARACARA_SAPLING.get()));
     }
 
     private static ResourceKey<PlacedFeature> createKey(String name) {

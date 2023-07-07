@@ -71,6 +71,7 @@ public class PlatosBiomes {
             event.accept(ModBlocks.STRIPPED_ARACARA_LOG);
             event.accept(ModBlocks.STRIPPED_ARACARA_WOOD);
             event.accept(ModBlocks.ARACARA_PLANKS);
+            event.accept(ModBlocks.ARACARA_SAPLING);
             event.accept(ModBlocks.ARACARA_LEAVES);
             event.accept(ModBlocks.ARACARA_DOOR);
             event.accept(ModBlocks.ARACARA_TRAPDOOR);
@@ -94,6 +95,7 @@ public class PlatosBiomes {
             event.accept(ModBlocks.ARACARA_WOOD);
             event.accept(ModBlocks.STRIPPED_ARACARA_LOG);
             event.accept(ModBlocks.STRIPPED_ARACARA_WOOD);
+            event.accept(ModBlocks.ARACARA_SAPLING);
             event.accept(ModBlocks.ARACARA_LEAVES);
         }
     }

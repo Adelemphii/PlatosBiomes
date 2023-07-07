@@ -23,7 +23,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STRIPPED_EBONY_WOOD.get());
         this.dropSelf(ModBlocks.STRIPPED_EBONY_LOG.get());
         this.dropSelf(ModBlocks.EBONY_SAPLING.get());
-
         this.add(ModBlocks.EBONY_LEAVES.get(),
                 (block) -> createLeavesDrops(block, ModBlocks.EBONY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
@@ -32,7 +31,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STRIPPED_ARACARA_LOG.get());
         this.dropSelf(ModBlocks.STRIPPED_ARACARA_WOOD.get());
         this.dropSelf(ModBlocks.ARACARA_PLANKS.get());
-        this.dropSelf(ModBlocks.ARACARA_LEAVES.get());
+        this.dropSelf(ModBlocks.ARACARA_SAPLING.get());
+        this.add(ModBlocks.ARACARA_LEAVES.get(),
+                (block) -> createLeavesDrops(block, ModBlocks.ARACARA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(ModBlocks.ARACARA_DOOR.get(), this::createDoorTable);
         this.dropSelf(ModBlocks.ARACARA_TRAPDOOR.get());
         this.dropSelf(ModBlocks.ARACARA_BUTTON.get());
