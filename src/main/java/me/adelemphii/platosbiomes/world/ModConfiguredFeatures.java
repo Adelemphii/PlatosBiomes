@@ -2,6 +2,8 @@ package me.adelemphii.platosbiomes.world;
 
 import me.adelemphii.platosbiomes.PlatosBiomes;
 import me.adelemphii.platosbiomes.block.ModBlocks;
+import me.adelemphii.platosbiomes.world.tree.trunkplacers.BranchesConfig;
+import me.adelemphii.platosbiomes.world.tree.trunkplacers.LargeBranchingTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -20,7 +22,6 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePl
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
 
 public class ModConfiguredFeatures {
 
@@ -72,7 +73,11 @@ public class ModConfiguredFeatures {
     private static TreeConfiguration.TreeConfigurationBuilder aracara() {
         return (new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.ARACARA_LOG.get()),
-                new MegaJungleTrunkPlacer(15, 10, 2),
+                //new MegaWindingTrunkPlacer(30, 10, 14, UniformInt.of(4, 4)),
+                new LargeBranchingTrunkPlacer(70, 1, 30,
+                        new BranchesConfig(3, 1, 30, 20,
+                                0.3, 0.2),
+                        false, 15),
                 BlockStateProvider.simple(ModBlocks.ARACARA_LEAVES.get()),
                 new MegaJungleFoliagePlacer(
                         ConstantInt.of(3),

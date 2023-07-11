@@ -7,6 +7,7 @@ import me.adelemphii.platosbiomes.block.entity.ModWoodType;
 import me.adelemphii.platosbiomes.item.ModCreativeModeTabs;
 import me.adelemphii.platosbiomes.item.ModItems;
 import me.adelemphii.platosbiomes.world.biome.ModBiomes;
+import me.adelemphii.platosbiomes.world.tree.trunkplacers.PlatosTrunkPlacerType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
@@ -35,6 +36,7 @@ public class PlatosBiomes {
     public PlatosBiomes() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        PlatosTrunkPlacerType.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
